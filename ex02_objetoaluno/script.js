@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // Valida se a idade é um valor inteiro
         if (!Number.isInteger(parseFloat(idade))) {
             alert('A idade deve ser um número inteiro.');
             return;
