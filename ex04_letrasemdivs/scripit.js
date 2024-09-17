@@ -1,13 +1,16 @@
-document.getElementById("separarBtn").addEventListener("click", function() {
-    const palavra = document.getElementById("inputPalavra").value;
-    const resultadoDiv = document.getElementById("resultado");
+const inputPalavra = document.getElementById("inputPalavra");
+const btSeparar = document.getElementById("btSeparar");
+const divPrincipal = document.getElementById("divPrincipal"); 
 
-    resultadoDiv.innerHTML = "";
-
-    for (let letra of palavra) {
-        const letraDiv = document.createElement("div");
-        letraDiv.classList.add("letra");
-        letraDiv.textContent = letra;
-        resultadoDiv.appendChild(letraDiv);
+btSeparar.onclick = () => {
+    divPrincipal.innerHTML = ""; 
+    let palavra = inputPalavra.value;
+    for (let i = 0; i < palavra.length; i++) {
+        const letraDig = palavra[i];
+        let div = document.createElement("DIV");
+        div.className = "divLetra";
+        let letra = document.createTextNode(letraDig);
+        div.appendChild(letra);
+        divPrincipal.appendChild(div);
     }
-});
+};
