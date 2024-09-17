@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.container {
+    text-align: center;
+}
+
+#palavra {
+    font-size: 36px;
+    margin-bottom: 20px;
+    letter-spacing: 10px;
+}
+
+#letras {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 600px;
+}
+
+.letra {
+    padding: 10px;
+    margin: 5px;
+    font-size: 24px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 40px;
+    text-align: center;
+}
+
+.letra:hover {
+    background-color: #45a049;
+}
+
+#forca img {
+    margin-top: 20px;
+    width: 150px;
+}
