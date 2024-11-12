@@ -10,7 +10,7 @@ const baseURL = "https://parseapi.back4app.com";
 const usersURL = `${baseURL}/users`;
 const loginURL = `${baseURL}/login`;
 const logoutURL = `${baseURL}/logout`;
-const meURL = `${baseURL}/users/me`;
+const meURL = `${baseURL}/users/me`; 
 
 const headers = {
   "X-Parse-Application-Id": "NCDhku12YVcrYVzWfemoeSzzmeaBiTzw2hYCKz3C",
@@ -104,8 +104,6 @@ const handleBtLoginClick = async () => {
       password,
     }),
   });
-
-  console.log("response", response);
   const data = await response.json();
   if (!response.ok) {
     alert(`Code: ${data.code} - error: ${data.error}`);
@@ -143,6 +141,7 @@ const handleBtLogoutClick = async () => {
     history.back();
   }
 };
+
 
 if (btSignUp) {
   btSignUp.onclick = handleBtSignUpClick;
