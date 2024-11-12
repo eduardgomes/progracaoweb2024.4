@@ -10,6 +10,8 @@ const baseURL = "https://parseapi.back4app.com";
 const usersURL = `${baseURL}/users`;
 const loginURL = `${baseURL}/login`;
 const logoutURL = `${baseURL}/logout`;
+const meURL = `${baseURL}/users/me`;
+
 const headers = {
   "X-Parse-Application-Id": "NCDhku12YVcrYVzWfemoeSzzmeaBiTzw2hYCKz3C",
   "X-Parse-REST-API-Key": "36n0hCw2hJk46O7g4OiYE4e3VF8eVsn8cXpf7vsE",
@@ -21,6 +23,31 @@ const headersRevSession = {
 const headersJson = {
   ...headersRevSession,
   "Content-Type": "application/json",
+};
+
+const checkUserSession = async () => {
+  const userJson = localStorage.user;
+  if (userJson) {
+    const user = JSON.parse(userJson);
+    const response = await fetch(meURL, {
+      method: "GET",
+      headers: {
+        ...headers,
+        "X-Parse-Session-Token": user.sessionToken,
+      },
+    });
+    if (response.ok) {
+      const data = await response.json();
+      h1IndexTitle.innerHTML = `Back4App User (${data.username})`;
+      if (btLogout) {
+        btLogout.disabled = false;
+      }
+    } else {
+      delete localStorage.user;
+      alert("Sessão expirada. Por favor, faça login novamente.");
+      window.location.replace("/login");
+    }
+  }
 };
 
 const handleBtSignUpClick = async () => {
@@ -77,6 +104,7 @@ const handleBtLoginClick = async () => {
       password,
     }),
   });
+
   console.log("response", response);
   const data = await response.json();
   if (!response.ok) {
@@ -112,12 +140,9 @@ const handleBtLogoutClick = async () => {
     }
     console.log("data:", data);
     delete localStorage.user;
-    // location.assign("/ex08");
     history.back();
   }
 };
-
-// ================= Events ==========================
 
 if (btSignUp) {
   btSignUp.onclick = handleBtSignUpClick;
@@ -131,15 +156,4 @@ if (btLogout) {
   btLogout.onclick = handleBtLogoutClick;
 }
 
-if (h1IndexTitle) {
-  window.onload = () => {
-    const userJson = localStorage.user;
-    if (userJson) {
-      const user = JSON.parse(userJson);
-      h1IndexTitle.innerHTML = `Back4App User (${user.username})`;
-      if (btLogout) {
-        btLogout.disabled = false;
-      }
-    }
-  };
-}
+window.onload = checkUserSession;
