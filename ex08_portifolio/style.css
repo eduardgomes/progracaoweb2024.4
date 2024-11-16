@@ -100,8 +100,8 @@ nav a {
 
 .projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsivo */
-    gap: 1.5em; /* Espaçamento entre os artigos */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5em;
 }
 
 .project {
@@ -109,17 +109,17 @@ nav a {
     padding: 1em;
     border: 1px solid #3D5BA9;
     border-radius: 8px;
-    text-align: center; /* Centraliza texto e imagem */
+    text-align: center;
     color: #EFF1F6;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .project img {
-    width: 100%; /* Imagem ocupa toda a largura disponível */
-    max-width: 150px; /* Tamanho máximo */
-    margin: 0.5em auto; /* Margem ao redor */
-    display: block; /* Centraliza no elemento pai */
-    border-radius: 4px; /* Bordas levemente arredondadas */
+    width: 100%;
+    max-width: 150px; 
+    margin: 0.5em auto; 
+    display: block; 
+    border-radius: 4px; 
 }
 
 .project h3 {
