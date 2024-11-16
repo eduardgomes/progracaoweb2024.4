@@ -32,6 +32,31 @@ nav a {
     color: #EFF1F6;
 }
 
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    background: #11141D;
+    padding: 2em; 
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    gap: 20px;
+    text-align: left; 
+}
+
+.imagem-arredondada {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; 
+}
+
+.texto {
+    line-height: 1.0;
+    color: #EFF1F6;
+    max-width: 500px; 
+}
+
+
 .section {
     padding: 2em;
     text-align: center;
