@@ -37,12 +37,40 @@ nav a {
     text-align: center;
 }
 
-.skills-list {
-    display: flex;
-    justify-content: center;
-    gap: 1em;
-    list-style: none;
-    padding: 0;
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: #1A1F2E;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.skill-item {
+    text-align: center;
+    color: #EFF1F6;
+    padding: 10px;
+    background-color: #11141D;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill-item img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.skill-item p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.skill-item:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 15px rgba(61, 91, 169, 0.6);
 }
 
 .projects {
