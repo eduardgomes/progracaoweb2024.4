@@ -7,24 +7,21 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <section id="intro">
-        <p>Se divirta tentando decifrar o código secreto por meio de tentativas e erros!</p>
+    <section id="explanation">
+        <h2>Como funciona?</h2>
+        <p>
+            Você vai tentar adivinhar o número secreto. Os dígitos do número adivinhado devem ser todos diferentes.
+            Se os dígitos correspondentes estiverem em suas posições corretas, eles são "touros" (B), se em posições diferentes, eles são "vacas" (C).
+        </p>
+        <p>
+            <strong>Exemplo:</strong><br>
+            Número secreto: 4271<br>
+            Tentativa: 1234<br>
+            Resposta: BCC - 1 touro e 2 vacas. (O touro é "2", as vacas são "4" e "1".)
+        </p>
     </section>
 
-    <section id="game">
-        <h2>Decifre o código secreto:</h2>
-        <input type="text" id="guess" maxlength="4" placeholder="Digite sua tentativa">
-        <button onclick="checkGuess()">Tentar</button>
-        <button onclick="showCombination()">Exibir resultado</button>
-        <div id="result"></div>
-        <div id="attempts"></div>
-    </section>
+    <div id="button">
+        <a href="paginajogo/" class="btn">Jogar</a>
 
-    <footer>
-        <p>&copy; 2024 Eduardo Gomes</p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+    </div>
