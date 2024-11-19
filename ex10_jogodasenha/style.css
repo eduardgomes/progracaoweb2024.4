@@ -11,6 +11,22 @@ body {
     height: 100vh;
 }
 
+#intro {
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#intro p {
+    margin: 0;
+    font-size: 1.2em;
+}
+
 #game {
     background-color: #3D5BA9;
     padding: 20px;
